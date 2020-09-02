@@ -79,6 +79,6 @@ new_folder <- (paste("groups_", file_genes, "/", sep = ""))
 dir.create(new_folder)
 for(x in 1:Nodes){
   write.table(significantGenes[x], quote = FALSE, sep = "\t", 
-              file = paste(new_folder, x, "-", names(significantGenes)[x], ".tsv", sep=""),
+              file = paste(new_folder, x, "-", gsub("/", "-",names(significantGenes)[x]), ".tsv", sep=""),
               col.names = F)
 }
